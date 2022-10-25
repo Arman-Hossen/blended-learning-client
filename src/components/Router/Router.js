@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/courses',
-                loader:()=>fetch('fakedb.json'),
+                loader:()=>fetch('http://localhost:5000/courses'),
                 element:<Courses></Courses>
   
             },
@@ -53,7 +53,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/courses/:id',
-                loader:({params})=>fetch(`fakedb.json/${params.id}`),
+                loader:({params})=>fetch(`http://localhost:5000/courses/${params.id}`),
                 element:<CourseDetails></CourseDetails>
   
             },
