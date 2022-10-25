@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Blog from "../Blog/Blog";
+import CourseDetails from "../CourseDetails/CourseDetails";
 import Courses from "../Courses/Courses";
+import Error from "../Error/Error";
 import FAQ from "../FAQ/FAQ";
 import Home from "../Home/Home";
 import LogIn from "../LogIn/LogIn";
@@ -11,6 +13,7 @@ export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main></Main>,
+        errorElement:<Error></Error>,
         children:[
             {
               path:'/',
@@ -24,6 +27,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/courses',
+                loader:()=>fetch('fakedb.json'),
                 element:<Courses></Courses>
   
             },
@@ -45,6 +49,12 @@ export const router = createBrowserRouter([
             {
                 path:'/login',
                 element:<LogIn></LogIn>
+  
+            },
+            {
+                path:'/courses/:id',
+                loader:({params})=>fetch(`fakedb.json/${params.id}`),
+                element:<CourseDetails></CourseDetails>
   
             },
         ]

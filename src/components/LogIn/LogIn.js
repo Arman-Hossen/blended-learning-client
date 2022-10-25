@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+
 
 const LogIn = () => {
     return (
@@ -38,7 +38,7 @@ const LogIn = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit" >
-          Register
+          Log In
         </Button>
         <Form.Text className="text-danger"></Form.Text>
       </Form>
