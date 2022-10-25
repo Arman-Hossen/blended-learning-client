@@ -5,7 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 const CourseDetails = () => {
     const course = useLoaderData();
     console.log(course);
-    const { id, courseName , picture } = course;
+    const { courseName , picture } = course;
 
     return (
         <div>
